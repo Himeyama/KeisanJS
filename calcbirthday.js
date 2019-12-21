@@ -16,12 +16,12 @@ $(function(){
         
         var aveLifeM = new Date(era.date)
         aveLifeM.setFullYear(aveLifeM.getFullYear() + 87)
-        aveLifeM = new Era(aveLifeM.getFullYear(), aveLifeM.getMonth(), aveLifeM.getDate())
+        aveLifeM = new Era(aveLifeM.getFullYear(), aveLifeM.getMonth() + 1, aveLifeM.getDate())
         aveLM = aveLifeM.getEraDate()
 
         var aveLifeF = new Date(era.date)
         aveLifeF.setFullYear(aveLifeF.getFullYear() + 93)
-        aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth(), aveLifeF.getDate())
+        aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth() + 1, aveLifeF.getDate())
         aveLF = aveLifeF.getEraDate()
 
         var m = parseInt($("#month").val())
