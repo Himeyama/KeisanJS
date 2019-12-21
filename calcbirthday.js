@@ -44,8 +44,8 @@ $(function(){
             <tr><td><b>年齢</b></td><td>${(new Date()).getFullYear() - era.date.getFullYear() + cor}</td></tr>
             <tr><td><b>干支</b></td><td>${["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"][((era.date.getFullYear()) - 4) % 12]}</td></tr>
             <tr><td><b>星座</b></td><td>${cons.getConstellation()}</td></tr>
-            <tr><td><b>寿命</b></td><td>${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.date.getFullYear()}年)${aveLM[2]}月${aveLM[3]}日 / 
-            ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.date.getFullYear()}年)${aveLF[2]}月${aveLF[3]}日</td></tr>
+            <tr><td><b>寿命</b></td><td>${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.date.getFullYear()}年)<!--${aveLM[2]}月${aveLM[3]}日--> / 
+            ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.date.getFullYear()}年)<!--${aveLF[2]}月${aveLF[3]}日--></td></tr>
             <tr><td><b>残り寿命</b></td><td>${aveLifeM.date.getFullYear() - (new Date()).getFullYear()}年 / ${aveLifeF.date.getFullYear() - (new Date()).getFullYear()}年</tr>
             </table>
 
@@ -109,8 +109,8 @@ $(function(){
         `)
     })
 
-    // $("#year").val("")
-    // $("#month").val("")
-    // $("#date").val("")
+    $("#year").val("")
+    $("#month").val("")
+    $("#date").val("")
 })
 
