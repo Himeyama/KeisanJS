@@ -24,6 +24,9 @@ $(function(){
         aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth() + 1, aveLifeF.getDate())
         aveLF = aveLifeF.getEraDate()
 
+        var r = new Era()
+        r.date = new Date(era.date)
+
         var m = parseInt($("#month").val())
         var d = parseInt($("#date").val())
         var day = ["日", "月", "火", "水", "木", "金", "土"]
@@ -43,16 +46,71 @@ $(function(){
             <tr><td><b>星座</b></td><td>${cons.getConstellation()}</td></tr>
             <tr><td><b>寿命</b></td><td>${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.date.getFullYear()}年)${aveLM[2]}月${aveLM[3]}日 / 
             ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.date.getFullYear()}年)${aveLF[2]}月${aveLF[3]}日</td></tr>
+            <tr><td><b>残り寿命</b></td><td>${aveLifeM.date.getFullYear() - (new Date()).getFullYear()}年 / ${aveLifeF.date.getFullYear() - (new Date()).getFullYear()}年</tr>
             </table>
 
             <p>
                 寿命は最頻値(最も死亡する人が多い年齢)であり、男性87歳 / 女性93歳としています。
             </p>
+
+            <h2>学歴</h2>
+            <table border style="text-align: center;">
+                <tr><td><b>年</b></td><td><b>月</b></td><td><b>学歴</b></td></tr>
+                <tr>
+                    <td>
+                        ${r.date.setFullYear(r.date.getFullYear() + (6 + (r.date.getMonth() * 100 + r.date.getDate() >= 302 ? 1 : 0))) && r.getEraDate()[0]}<!--
+                        -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>4</td>
+                    <td>小学校入学</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ${r.date.setFullYear(r.date.getFullYear() + 6) && r.getEraDate()[0]}<!--
+                        -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>3</td>
+                    <td>小学校卒業</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ${r.getEraDate()[0]}${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>4</td>
+                    <td>中学校入学</td>
+                </tr>
+
+                <tr>
+                    <td>${r.date.setFullYear(r.date.getFullYear() + 3) && r.getEraDate()[0]}<!--
+                        -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>4</td>
+                    <td>中学校卒業</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ${r.getEraDate()[0]}${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>4</td>
+                    <td>高等学校入学</td>
+                </tr>
+
+                <tr>
+                    <td>${r.date.setFullYear(r.date.getFullYear() + 3) && r.getEraDate()[0]}<!--
+                        -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
+                    </td>
+                    <td>3</td>
+                    <td>高等学校卒業</td>
+                </tr>
+            </table>
         `)
     })
 
-    $("#year").val("")
-    $("#month").val("")
-    $("#date").val("")
+    // $("#year").val("")
+    // $("#month").val("")
+    // $("#date").val("")
 })
 
