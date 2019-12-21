@@ -33,18 +33,20 @@ $(function(){
         if(((today2.getMonth() + 1) * 100 + today2.getDate()) <= (m * 100 + d)){
             cor = -1
         }
+        var cons = new Constellation(m, d)
 
         $(".result").html(`
             <table border>
             <tr><td><b>生年月日</b></td><td>${era.getWareki()}(${day[era.date.getDay()]})</td></tr>
             <tr><td><b>年齢</b></td><td>${(new Date()).getFullYear() - era.date.getFullYear() + cor}</td></tr>
             <tr><td><b>干支</b></td><td>${["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"][((era.date.getFullYear()) - 4) % 12]}</td></tr>
+            <tr><td><b>星座</b></td><td>${cons.getConstellation()}</td></tr>
             <tr><td><b>寿命</b></td><td>${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.date.getFullYear()}年)${aveLM[2]}月${aveLM[3]}日 / 
             ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.date.getFullYear()}年)${aveLF[2]}月${aveLF[3]}日</td></tr>
             </table>
 
             <p>
-                寿命は最貧値(最も死亡する人が多い年齢)であり、男性87歳 / 女性93歳としています。
+                寿命は最頻値(最も死亡する人が多い年齢)であり、男性87歳 / 女性93歳としています。
             </p>
         `)
     })
