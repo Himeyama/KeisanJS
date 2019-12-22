@@ -39,7 +39,7 @@ $(function(){
         var cons = new Constellation(m, d)
 
         $(".result").html(`
-            <table border>
+            <table>
             <tr><td><b>生年月日</b></td><td>${era.getWareki()}(${day[era.date.getDay()]})</td></tr>
             <tr><td><b>年齢</b></td><td>${(new Date()).getFullYear() - era.date.getFullYear() + cor}</td></tr>
             <tr><td><b>干支</b></td><td>${["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"][((era.date.getFullYear()) - 4) % 12]}</td></tr>
@@ -66,7 +66,7 @@ $(function(){
             </p>
 
             <h2>学歴</h2>
-            <table border style="text-align: center;">
+            <table style="text-align: center;">
                 <tr><td><b>年</b></td><td><b>月</b></td><td><b>学歴</b></td></tr>
                 <tr>
                     <td>
