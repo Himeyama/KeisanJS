@@ -9,6 +9,11 @@ title: How to use era.js
 
 和暦を取得する自作ライブラリ`era.js`の説明
 
+## 対応バージョン
+
+- [era-1.0.0.js](./era-1.0.0.js)
+- [era-1.1.0.js](./era-1.1.0.js)
+
 ## Era のインスタンスを生成
 
 ```js
