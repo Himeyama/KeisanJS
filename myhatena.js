@@ -4,7 +4,10 @@ $(function(){
     let postDate = new Era(postDateElement.dateTime)
     let postWareki = postDate.getWareki()
     $(postDateElement).html(postWareki)
+})
 
+// 数秒後に実行
+setTimeout(function(){
     // 月別アーカイブを和暦に
     let archiveMYT = $(".archive-module-year-title")
     for(let i = 0; i < archiveMYT.length; i++){
@@ -12,10 +15,21 @@ $(function(){
         let y = parseInt(tmp[1])
         let n = parseInt(tmp[2])
         let e = (new Era(y, 0, 1)).getEraDate()
-        let str = e[0] + e[1] + "年" + " (" + n + "件)"
+        let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + " (" + n + "件)"
         $(archiveMYT[i]).text(str)
     }
-})
+
+    let archiveMMT = $(".archive-module-month-title")
+    for(let i = 0; i < archiveMMT.length; i++){
+        let tmp = $(archiveMMT[i]).text().match(/(\d{4})\s+\/\s+(\d+)\s+\((\d+)\)/i)
+        let y = parseInt(tmp[1])
+        let m = parseInt(tmp[2])
+        let n = parseInt(tmp[3])
+        let e = (new Era(y, m - 1, 1)).getEraDate()
+        let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + e[2] + "月 (" + n + "件)"
+        $(archiveMMT[i]).text(str)
+    }
+}, 3000)
 
 
 // function toEra(t){var e,n=[[1868,1,1,"明治"],[1912,7,30,"大正"],[1926,12,25,"昭和"],[1989,1,8,"平成"],[2019,5,1,"令和"]];return n.some(function(r,a){if(new Date(r[0],r[1]-1,r[2])<=t){if(a==n.length-1)return e=[n[a][3],t.getFullYear()-r[0]+1,t.getMonth()+1,t.getDate(),t.getHours(),t.getMinutes(),t.getSeconds()],!0;if(t<new Date(n[a+1][0],n[a+1][1]-1,n[a+1][2]))return e=[r[3],t.getFullYear()-r[0]+1,t.getMonth()+1,t.getDate(),t.getHours(),t.getMinutes(),t.getSeconds()],!0}}),e}$(function(){var t=toEra(new Date(Date.parse($("time").attr("datetime"))));1==t[1]&&(t[1]="元"),$("time").text(`${t[0]}${t[1]}年${t[2]}月${t[3]}日`),$("time#now").text("")});
