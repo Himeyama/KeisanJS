@@ -4,6 +4,17 @@ $(function(){
     let postDate = new Era(postDateElement.dateTime)
     let postWareki = postDate.getWareki()
     $(postDateElement).html(postWareki)
+
+    // 月別アーカイブを和暦に
+    let archiveMYT = $(".archive-module-year-title")
+    for(let i = 0; i < archiveMYT.length; i++){
+        let tmp = $(archiveMYT[i]).text().match(/(\d{4})\s+\((\d+)\)/i)
+        let y = parseInt(tmp[1])
+        let n = parseInt(tmp[2])
+        let e = (new Era(y, 0, 1)).getEraDate()
+        let str = e[0] + e[1] + "年" + " (" + n + "件)"
+        $(archiveMYT[i]).text(str)
+    }
 })
 
 
