@@ -1,0 +1,31 @@
+#wrapper{
+    margin: 0 16px;
+}
+
+body > div, body > footer{
+    padding: auto;
+}
+
+header#blog-title {
+    margin: 0 16px;
+}
+
+ul.recent-entries.hatena-urllist {
+    list-style: none;
+    padding: 0;
+}
+
+ul.recent-entries.hatena-urllist li a {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    transition: .3s;
+    color: #333;
+    padding-left: 16px;
+    font-size: 14px;
+}
+
+ul.recent-entries.hatena-urllist li a:hover {
+    background: #ddd;
+    text-decoration: none;
+}
