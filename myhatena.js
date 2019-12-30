@@ -14,6 +14,16 @@ $(function(){
         }
         n.html(r.join(""))
     }
+
+    // ブログタイトルアニメーション
+    let title_text = $("#title a").text()
+    let title_text_i = 0
+    setInterval(function(){
+        if(title_text_i <= title_text.length){
+            $("#title a").text(title_text.slice(0,title_text_i+1))
+            title_text_i++
+        }
+    },200)
 })
 
 // 数秒後に実行
@@ -39,18 +49,7 @@ setTimeout(function(){
         let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + e[2] + "月 (" + n + "件)"
         $(archiveMMT[i]).text(str)
     }
-}, 3000)
 
-// $(function(){var t=$("time").size();for(i=0;i<t;i++){var e=$(".date.archive-date time").eq(i),a=e.attr("datetime"),r=new Date(a),d=toEra(r);e.text(`${d[0]}${1==d[1]?"元":d[1]}年${d[2]}月${d[3]}日`)});
-
-// var title_text=$("#title a").text(),title_text_i=0;setInterval(function(){title_text_i<=title_text.length&&$("#title a").text(title_text.slice(0,title_text_i+1)),title_text_i++},200);
-
-// 
-
-// function xptheme(){var e=[".entry-title",".entry-header",".entry-content","pre"];for(i=0;i<e.length;i++)$(e[i]).addClass("xp")}
-
-// $(function(){for(let i=0;i<$(".typewriter").length;i++){let e=$(".typewriter").eq(i);let str=e.text();for(let j=0;j<=str.length;j++){setTimeout(function(){typew(e,str.slice(0,j))},100+(20*j))}}});function typew(a,b){a.text(b)};
-
-// setTimeout(function(){$(".ad").css("display", "none");$("#box2").css("display", "none");$(".adx-responsive-mode").css("display", "none");}, 2000)
-
-// <script>$(document).ready(function(){var e=["jQuery","MathJax","JavaScript"];for(i=0;i<$(".hatena-module-title").length;i++)e.indexOf($(".hatena-module-title").eq(i).html())>=0&&$(".hatena-module-title").eq(i).css("display","none")});</script>
+    let ad = [".ad", "#box2", ".adx-responsive-mode"]
+    for(let i = 0; i < ad.length; i++) $(ad[i]).css("display", "none")
+}, 2000)
