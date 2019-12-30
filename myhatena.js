@@ -50,6 +50,6 @@ setTimeout(function(){
         $(archiveMMT[i]).text(str)
     }
 
-    let ad = [".ad", "#box2", ".adx-responsive-mode"]
+    let ad = [".ad", ".adx-responsive-mode"]
     for(let i = 0; i < ad.length; i++) $(ad[i]).css("display", "none")
 }, 2000)
