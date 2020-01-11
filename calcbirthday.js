@@ -12,7 +12,7 @@ $(function(){
     })
 
     $("#run").click(function(){
-        var era = new Era(parseInt($("#year").val()), parseInt($("#month").val()), parseInt($("#date").val()))
+        var era = new Era(parseInt($("#year").val()), parseInt($("#month").val()) - 1, parseInt($("#date").val()))
         
         var aveLifeM = new Era(era)
         aveLifeM.setFullYear(aveLifeM.getFullYear() + 87)
@@ -27,13 +27,7 @@ $(function(){
         aveLifeF.setFullYear(aveLifeF.getFullYear() + 93)
         aveLF = aveLifeF.getEraDate()
 
-        // var aveLifeF = new Date(era.date)
-        // aveLifeF.setFullYear(aveLifeF.getFullYear() + 93)
-        // aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth() + 1, aveLifeF.getDate())
-        // aveLF = aveLifeF.getEraDate()
-
-        var r = new Era()
-        r.date = new Date(era.date)
+        var r = new Era(era)
 
         var m = parseInt($("#month").val())
         var d = parseInt($("#date").val())
@@ -78,7 +72,7 @@ $(function(){
                 <tr><td><b>年</b></td><td><b>月</b></td><td><b>学歴</b></td></tr>
                 <tr>
                     <td>
-                        ${r.setFullYear(r.getFullYear() + (6 + (r.getMonth() * 100 + r.getDate() >= 302 ? 1 : 0))) && r.getEraDate()[0]}<!--
+                        ${r.setFullYear(r.getFullYear() + (6 + ((r.getMonth() + 1) * 100 + r.getDate() >= 302 ? 1 : 0))) && r.getEraDate()[0]}<!--
                         -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
                     </td>
                     <td>4</td>
