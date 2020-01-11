@@ -8,7 +8,7 @@ title: 誕生日計算
 <script src="./age.js"></script>
 <script src="./jquery-3.4.1.min.js"></script>
 <script src="./calcbirthday.js"></script>
-<h1>誕生日計算</h1>
+
 <p>
     誕生日から<b>生年月日(和暦)</b>、<b>年齢</b>、<b>干支</b>、<b>星座</b>、<b>寿命</b>、<b>学歴</b>が計算できます。
 </p>

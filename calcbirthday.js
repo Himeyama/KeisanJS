@@ -14,15 +14,23 @@ $(function(){
     $("#run").click(function(){
         var era = new Era(parseInt($("#year").val()), parseInt($("#month").val()), parseInt($("#date").val()))
         
-        var aveLifeM = new Date(era.date)
+        var aveLifeM = new Era(era)
         aveLifeM.setFullYear(aveLifeM.getFullYear() + 87)
-        aveLifeM = new Era(aveLifeM.getFullYear(), aveLifeM.getMonth() + 1, aveLifeM.getDate())
         aveLM = aveLifeM.getEraDate()
 
-        var aveLifeF = new Date(era.date)
+        // var aveLifeM = new Date(era.date)
+        // aveLifeM.setFullYear(aveLifeM.getFullYear() + 87)
+        // aveLifeM = new Era(aveLifeM.getFullYear(), aveLifeM.getMonth() + 1, aveLifeM.getDate())
+        // aveLM = aveLifeM.getEraDate()
+
+        var aveLifeF = new Era(era)
         aveLifeF.setFullYear(aveLifeF.getFullYear() + 93)
-        aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth() + 1, aveLifeF.getDate())
         aveLF = aveLifeF.getEraDate()
+
+        // var aveLifeF = new Date(era.date)
+        // aveLifeF.setFullYear(aveLifeF.getFullYear() + 93)
+        // aveLifeF = new Era(aveLifeF.getFullYear(), aveLifeF.getMonth() + 1, aveLifeF.getDate())
+        // aveLF = aveLifeF.getEraDate()
 
         var r = new Era()
         r.date = new Date(era.date)
@@ -40,22 +48,22 @@ $(function(){
 
         $(".result").html(`
             <table>
-            <tr><td><b>生年月日</b></td><td>${era.getWareki()}(${day[era.date.getDay()]})</td></tr>
-            <tr><td><b>年齢</b></td><td>${(new Date()).getFullYear() - era.date.getFullYear() + cor}</td></tr>
-            <tr><td><b>干支</b></td><td>${["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"][((era.date.getFullYear()) - 4) % 12]}</td></tr>
+            <tr><td><b>生年月日</b></td><td>${era.getWareki()}(${day[era.getDay()]})</td></tr>
+            <tr><td><b>年齢</b></td><td>${(new Date()).getFullYear() - era.getFullYear() + cor}</td></tr>
+            <tr><td><b>干支</b></td><td>${["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"][((era.getFullYear()) - 4) % 12]}</td></tr>
             <tr><td><b>星座</b></td><td>${cons.getConstellation()}</td></tr>
             
             <tr><td><b>寿命</b></td>
                 <td>
                 <p><b>男: </b>
-                ${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.date.getFullYear()}年)まで
-                残り${aveLifeM.date.getFullYear() - (new Date()).getFullYear()}年<br>
-                <progress max="87" value="${(new Date()).getFullYear() - era.date.getFullYear() + cor}"></progress>
+                ${aveLM[0]}${aveLM[1] == 1 ? "元" : aveLM[1]}年(${aveLifeM.getFullYear()}年)まで
+                残り${aveLifeM.getFullYear() - (new Date()).getFullYear()}年<br>
+                <progress max="87" value="${(new Date()).getFullYear() - era.getFullYear() + cor}"></progress>
                 </p>
                 <p><b>女: </b>
-                ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.date.getFullYear()}年)まで
-                残り${aveLifeF.date.getFullYear() - (new Date()).getFullYear()}年<br>
-                <progress max="93" value="${(new Date()).getFullYear() - era.date.getFullYear() + cor}"></progress>
+                ${aveLF[0]}${aveLF[1] == 1 ? "元" : aveLF[1]}年(${aveLifeF.getFullYear()}年)まで
+                残り${aveLifeF.getFullYear() - (new Date()).getFullYear()}年<br>
+                <progress max="93" value="${(new Date()).getFullYear() - era.getFullYear() + cor}"></progress>
                 </p>
             </tr>
 
@@ -70,7 +78,7 @@ $(function(){
                 <tr><td><b>年</b></td><td><b>月</b></td><td><b>学歴</b></td></tr>
                 <tr>
                     <td>
-                        ${r.date.setFullYear(r.date.getFullYear() + (6 + (r.date.getMonth() * 100 + r.date.getDate() >= 302 ? 1 : 0))) && r.getEraDate()[0]}<!--
+                        ${r.setFullYear(r.getFullYear() + (6 + (r.getMonth() * 100 + r.getDate() >= 302 ? 1 : 0))) && r.getEraDate()[0]}<!--
                         -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
                     </td>
                     <td>4</td>
@@ -79,7 +87,7 @@ $(function(){
 
                 <tr>
                     <td>
-                        ${r.date.setFullYear(r.date.getFullYear() + 6) && r.getEraDate()[0]}<!--
+                        ${r.setFullYear(r.getFullYear() + 6) && r.getEraDate()[0]}<!--
                         -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
                     </td>
                     <td>3</td>
@@ -95,7 +103,7 @@ $(function(){
                 </tr>
 
                 <tr>
-                    <td>${r.date.setFullYear(r.date.getFullYear() + 3) && r.getEraDate()[0]}<!--
+                    <td>${r.setFullYear(r.getFullYear() + 3) && r.getEraDate()[0]}<!--
                         -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
                     </td>
                     <td>4</td>
@@ -111,7 +119,7 @@ $(function(){
                 </tr>
 
                 <tr>
-                    <td>${r.date.setFullYear(r.date.getFullYear() + 3) && r.getEraDate()[0]}<!--
+                    <td>${r.setFullYear(r.getFullYear() + 3) && r.getEraDate()[0]}<!--
                         -->${r.getEraDate()[1] == 1 ? "元" : r.getEraDate()[1]}
                     </td>
                     <td>3</td>

@@ -5,7 +5,6 @@ layout: default
 
 <script type="text/javascript" src="./solver.js"></script>
 
-<h1>數獨計算器</h1>
 <table>
     <script><!--
         for(i = 0; i < 9; i++){

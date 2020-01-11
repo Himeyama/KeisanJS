@@ -3,7 +3,6 @@ layout: default
 title: exset.js
 ---
 
-# exset.js
 `Array`を拡張した`Exset`クラスのオブジェクトについて定義している自作の集合ライブラリーです。
 - [exset-0.0.0.js](./exset-0.0.0.js)
 
