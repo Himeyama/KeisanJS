@@ -1,6 +1,6 @@
 ---
 layout: default
-title: センター試験タイマー
+title: センター試験タイマー(2日目 令和2年1月19日)
 ---
 
 <p
@@ -10,11 +10,11 @@ title: センター試験タイマー
 ></p>
 
 <script>
-let cex = new Date(2020, 0, 18, 9, 30, 0)
+let cex = new Date(2020, 0, 19, 9, 30, 0)
 
 setInterval(function(){
     let now = new Date()
     let dt = (cex - now)
-    center_exam.innerHTML = `センター試験まであと、${parseInt((dt))}ms`
+    center_exam.innerHTML = `センター試験2日目まであと、${parseInt((dt))}ms`
 },1)
 </script>
