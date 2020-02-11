@@ -53,3 +53,14 @@ setTimeout(function(){
     let ad = [".ad", ".adx-responsive-mode"]
     for(let i = 0; i < ad.length; i++) $(ad[i]).css("display", "none")
 }, 2000)
+
+
+if(location.pathname == "/"){
+    document.getElementById("top-editarea")
+    .children[0]
+    .children[0]
+    .children[0]
+    .style
+    .borderBottom 
+    = "solid 3px dodgerblue"
+}
