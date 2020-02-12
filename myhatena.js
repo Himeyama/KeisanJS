@@ -82,3 +82,9 @@ postDateElement.innerHTML = postWareki
 // 次のページ
 var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
 nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
+
+// 隠しウィンドウ
+function hidden(){
+    document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "block"
+    document.getElementsByClassName("hatena-module hatena-module-html")[2].children[0].innerText = ""
+}
