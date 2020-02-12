@@ -2,11 +2,11 @@
 function getOS(){
     let ua = window.navigator.userAgent
     let osList = [
+        "Android",
         "Linux",
         "Windows",
-        "Android",
-        "Macintosh",
-        "iPhone"
+        "iPhone",
+        "Macintosh"
     ]
     let os
     for(i in osList){
