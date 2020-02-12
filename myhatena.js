@@ -89,3 +89,20 @@ function hidden(){
     document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "block"
     document.getElementsByClassName("hatena-module hatena-module-html")[2].children[0].innerText = ""
 }
+let win1 = document.getElementById("window1")
+let win1MF = false
+let win1y, win1x
+win1.onmousedown = function(e){
+    win1MF = true
+    win1y = e.offsetY
+    win1x = e.offsetX
+}
+document.body.onmouseup = function(e){
+    win1MF = false
+}
+document.body.onmousemove = function(e){
+    if(win1MF){
+        win1.style.top = `${e.pageY - win1y}px`
+        win1.style.left = `${e.pageX - win1x}px`
+    }
+}
