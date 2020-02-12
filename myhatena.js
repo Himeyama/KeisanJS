@@ -88,7 +88,7 @@ document.getElementById("top-editarea").children[0].children[2].onclick = hidden
 function hidden(){
     document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "block"
     document.getElementsByClassName("hatena-module hatena-module-html")[2].children[0].innerText = ""
-    document.getElementById("top-editarea").children[0].children[2].outerHTML = ""
+    document.getElementById("top-editarea").children[0].children[2].style.display = "none"
 }
 
 setTimeout(function(){
@@ -112,7 +112,6 @@ setTimeout(function(){
     
     document.getElementById("window1").getElementsByClassName("winCloseBtn")[0].onclick = function(e){
         document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "none"
-        document.getElementById("top-editarea").children[0].appendChild(document.createElement("li"))
-        document.getElementById("top-editarea").children[0].children[2].outerHTML = "<li><a href=\"#\">About</a></li>"
+        document.getElementById("top-editarea").children[0].children[2].style.display = "inline-block"
     }
 }, 1000)
