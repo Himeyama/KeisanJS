@@ -18,24 +18,6 @@ function getOS(){
     return os
 }
 
-$(function(){
-    // 投稿日時を和暦に変更
-    let postDateElement = $(".date.entry-date.first time")[0]
-    let postDate = new Era(postDateElement.dateTime)
-    let postWareki = postDate.getWareki()
-    $(postDateElement).html(postWareki)
-
-    // ブログタイトルアニメーション
-    let title_text = $("#title a").text()
-    let title_text_i = 0
-    setInterval(function(){
-        if(title_text_i <= title_text.length){
-            $("#title a").text(title_text.slice(0,title_text_i+1))
-            title_text_i++
-        }
-    },200)
-})
-
 // 数秒後に実行
 setTimeout(function(){
     // 月別アーカイブを和暦に
