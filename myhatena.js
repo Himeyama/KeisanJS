@@ -109,9 +109,9 @@ setTimeout(function(){
             win1.style.left = `${e.pageX - win1x}px`
         }
     }
+    
+    document.getElementById("window1").getElementsByClassName("winCloseBtn")[0].onclick = function(e){
+        document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "none"
+        document.getElementById("top-editarea").children[0].children[2].outerHTML = "<li><a href=\"#\">About</a></li>"
+    }
 }, 1000)
-
-document.getElementById("window1").getElementsByClassName("winCloseBtn")[0].onclick = function(e){
-    document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "none"
-    document.getElementById("top-editarea").children[0].children[2].outerHTML = "<li><a href=\"#\">About</a></li>"
-}
