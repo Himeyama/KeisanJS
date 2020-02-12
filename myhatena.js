@@ -79,3 +79,14 @@ let os = getOS()
 if(os == "Android" || os == "iPhone"){
     document.getElementById("top-editarea").remove()
 }
+
+// コード番号
+let codes = document.getElementsByTagName("pre")
+for(let i = 0; i < codes.length; i++){
+    let n = codes[i]
+    let r = n.innerHTML.match(/.*\n/g)
+    for(let j = 0; j < r.length; j++){
+        r[j] = `<code>${r[j].replace(/\r?\n/g, "")}</code>\n`
+    }
+    n.innerHTML = r.join("")
+}
