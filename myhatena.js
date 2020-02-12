@@ -1,3 +1,23 @@
+// OS判定
+function getOS(){
+    let ua = window.navigator.userAgent
+    let osList = [
+        "Linux",
+        "Windows",
+        "Android",
+        "Macintosh",
+        "iPhone"
+    ]
+    let os
+    for(i in osList){
+        if(ua.includes(i)){
+            os = osList[i]
+            break
+        }
+    }
+    return os
+}
+
 $(function(){
     // 投稿日時を和暦に変更
     let postDateElement = $(".date.entry-date.first time")[0]
@@ -55,6 +75,7 @@ setTimeout(function(){
 }, 2000)
 
 
+// ヘッダーメニュー
 if(location.pathname == "/"){
     document.getElementById("top-editarea")
     .children[0]
@@ -63,4 +84,8 @@ if(location.pathname == "/"){
     .style
     .borderBottom 
     = "solid 3px dodgerblue"
+}
+let os = getOS()
+if(os == "Android" || os == "iPhone"){
+    document.getElementById("top-editarea").remove()
 }
