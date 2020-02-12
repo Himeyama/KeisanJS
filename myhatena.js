@@ -25,16 +25,6 @@ $(function(){
     let postWareki = postDate.getWareki()
     $(postDateElement).html(postWareki)
 
-    let e = $("pre")
-    for(let i = 0; i < e.length; i++){
-        let n = $("pre").eq(i)
-        let r = n.html().match(/.*\n/g)
-        for(let j = 0; j < r.length; j++){
-            r[j] = `<code>${r[j].replace(/\r?\n/g,"")}</code>\n`
-        }
-        n.html(r.join(""))
-    }
-
     // ブログタイトルアニメーション
     let title_text = $("#title a").text()
     let title_text_i = 0
