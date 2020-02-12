@@ -84,6 +84,7 @@ var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[
 nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
 
 // 隠しウィンドウ
+document.getElementById("top-editarea").children[0].children[2].onclick = hidden
 function hidden(){
     document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "block"
     document.getElementsByClassName("hatena-module hatena-module-html")[2].children[0].innerText = ""
