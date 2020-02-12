@@ -78,3 +78,7 @@ let postDateElement = document.getElementsByClassName("date entry-date first")[0
 let postDate = new Era(postDateElement.dateTime)
 let postWareki = postDate.getWareki()
 postDateElement.innerHTML = postWareki
+
+// 次のページ
+var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
+nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
