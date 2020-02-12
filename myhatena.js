@@ -72,3 +72,9 @@ for(let i = 0; i < codes.length; i++){
     }
     n.innerHTML = r.join("")
 }
+
+// 和暦
+let postDateElement = document.getElementsByClassName("date entry-date first")[0].getElementsByTagName("time")[0]
+let postDate = new Era(postDateElement.dateTime)
+let postWareki = postDate.getWareki()
+postDateElement.innerHTML = postWareki
