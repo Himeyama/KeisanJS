@@ -10,7 +10,7 @@ function getOS(){
     ]
     let os
     for(i in osList){
-        if(ua.includes(i)){
+        if(ua.includes(osList[i])){
             os = osList[i]
             break
         }
