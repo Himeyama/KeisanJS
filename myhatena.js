@@ -84,6 +84,7 @@ var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[
 nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
 
 // 隠しウィンドウ
+Window.zIndex = 10000
 document
 .getElementById("top-editarea")
 .getElementsByTagName("li")[2]
