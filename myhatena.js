@@ -96,8 +96,9 @@ document
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
     <p>©2019 ひかり</p>")
     e["target"].style.display = "none"
-    about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(e){
-        e["target"].style.display = "inline-block"
+    about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+        console.log(e["target"])
+        e["target"].style.display = "block"
         about.close()
     }
 }
