@@ -82,8 +82,12 @@ if(document.getElementsByClassName("date entry-date first").length){
 }
 
 // 次のページ
-var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
-nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
+let nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
+if(document.getElementsByClassName("pager-next")[0]){
+    nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
+}else{
+    document.getElementById("top-editarea").getElementsByTagName("a")[1].style.display = "none"
+}
 
 // 隠しウィンドウ
 Window.zIndex = 10000
