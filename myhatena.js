@@ -61,16 +61,19 @@ for(let i = 0; i < document.getElementsByClassName("date archive-date").length; 
     .innerText
     = wareki.getWareki()
 }
-let archiveHeading 
-= document
-.getElementsByClassName("archive-heading")[0]
-.innerText.match(/(\d{4}-\d{2}-\d{2})(.*)/i)
-let archiveHeadingW = new Era(archiveHeading[1])
 
-document
-.getElementsByClassName("archive-heading")[0]
-.innerText
-= archiveHeadingW.getWareki() + archiveHeading[2]
+if(document.getElementsByClassName("archive-heading").length){
+    let archiveHeading 
+    = document
+    .getElementsByClassName("archive-heading")[0]
+    .innerText.match(/(\d{4}-\d{2}-\d{2})(.*)/i)
+    let archiveHeadingW = new Era(archiveHeading[1])
+
+    document
+    .getElementsByClassName("archive-heading")[0]
+    .innerText
+    = archiveHeadingW.getWareki() + archiveHeading[2]
+}
 
 
 // ヘッダーメニュー
