@@ -86,7 +86,7 @@ let nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[
 if(document.getElementsByClassName("pager-next")[0]){
     nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
 }else{
-    document.getElementById("top-editarea").getElementsByTagName("a")[1].style.display = "none"
+    document.getElementById("top-editarea").getElementsByTagName("li")[1].style.display = "none"
 }
 
 // 隠しウィンドウ
@@ -94,7 +94,6 @@ Window.zIndex = 10000
 document
 .getElementById("top-editarea")
 .getElementsByTagName("li")[2]
-.getElementsByTagName("a")[0]
 .onclick = function(e){
     let about = Window.create("about")
     about.setTitle("About")
@@ -124,7 +123,6 @@ if(location.pathname == "/search"){
 document
 .getElementById("top-editarea")
 .getElementsByTagName("li")[3]
-.getElementsByTagName("a")[0]
 .onclick = function(e){
     let search = Window.create("searchWindow")
     search.setTitle("Search")
@@ -147,7 +145,6 @@ document
 document
 .getElementById("top-editarea")
 .getElementsByTagName("li")[4]
-.getElementsByTagName("a")[0]
 .onclick = function(e){
     let clock = Window.create("clockWindow")
     clock.setTitle("Clock")
@@ -174,7 +171,6 @@ setInterval(function(){
 document
 .getElementById("top-editarea")
 .getElementsByTagName("li")[5]
-.getElementsByTagName("a")[0]
 .onclick = function(e){
     let note = BrowserNote.create("note")
     note.setTitle("Note")
