@@ -126,7 +126,7 @@ document
     about.setContents("\
     <h1>ひかりのブログ</h1>\
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
-    <p>©2019 ひかり</p>")
+    <p>©平成29年-令和2年 ひかり</p>")
     e.target.parentElement.style.display = "none"
     about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
         e.target.parentElement.style.display = "inline-block"
@@ -153,7 +153,7 @@ document
     let search = Window.create("searchWindow")
     search.setTitle("Search")
     search.setContents("\
-    <h1>検索</h1>\
+    <h3>検索</h3>\
     <form action='/search' method='get'>\
         <input name='q' style='width: 168px;font-size: 19px;'>\
         <input type='submit' style='width:64px;' value='検索'>\
