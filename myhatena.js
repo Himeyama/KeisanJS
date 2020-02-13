@@ -84,34 +84,20 @@ var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[
 nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
 
 // 隠しウィンドウ
-document.getElementById("top-editarea").children[0].children[2].onclick = hidden
-function hidden(){
-    document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "block"
-    document.getElementsByClassName("hatena-module hatena-module-html")[2].children[0].innerText = ""
-    document.getElementById("top-editarea").children[0].children[2].style.display = "none"
+document
+.getElementById("top-editarea")
+.getElementsByTagName("li")[2]
+.getElementsByTagName("a")[0]
+.onclick = function(e){
+    let about = Window.create("about")
+    about.setTitle("About")
+    about.setContents("\
+    <h1>ひかりのブログ</h1>\
+    <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
+    <p>©2019 ひかり</p>")
+    e["target"].style.display = "none"
+    about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(e){
+        e["target"].style.display = "inline-block"
+        about.close()
+    }
 }
-
-setTimeout(function(){
-    let win1 = document.getElementById("window1")
-    let win1MF = false
-    let win1y, win1x
-    win1.onmousedown = function(e){
-        win1MF = true
-        win1y = e.offsetY
-        win1x = e.offsetX
-    }
-    document.body.onmouseup = function(e){
-        win1MF = false
-    }
-    document.body.onmousemove = function(e){
-        if(win1MF){
-            win1.style.top = `${e.pageY - win1y}px`
-            win1.style.left = `${e.pageX - win1x}px`
-        }
-    }
-    
-    document.getElementById("window1").getElementsByClassName("winCloseBtn")[0].onclick = function(e){
-        document.getElementsByClassName("hatena-module hatena-module-html")[2].style.display = "none"
-        document.getElementById("top-editarea").children[0].children[2].style.display = "inline-block"
-    }
-}, 1000)
