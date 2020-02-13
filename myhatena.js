@@ -18,34 +18,34 @@ function getOS(){
     return os
 }
 
-// 数秒後に実行
-// setTimeout(function(){
-//     // 月別アーカイブを和暦に
-//     let archiveMYT = $(".archive-module-year-title")
-//     for(let i = 0; i < archiveMYT.length; i++){
-//         let tmp = $(archiveMYT[i]).text().match(/(\d{4})\s+\((\d+)\)/i)
-//         let y = parseInt(tmp[1])
-//         let n = parseInt(tmp[2])
-//         let e = (new Era(y, 0, 1)).getEraDate()
-//         let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + " (" + n + "件)"
-//         $(archiveMYT[i]).text(str)
-//     }
-
-//     let archiveMMT = $(".archive-module-month-title")
-//     for(let i = 0; i < archiveMMT.length; i++){
-//         let tmp = $(archiveMMT[i]).text().match(/(\d{4})\s+\/\s+(\d+)\s+\((\d+)\)/i)
-//         let y = parseInt(tmp[1])
-//         let m = parseInt(tmp[2])
-//         let n = parseInt(tmp[3])
-//         let e = (new Era(y, m - 1, 1)).getEraDate()
-//         let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + e[2] + "月 (" + n + "件)"
-//         $(archiveMMT[i]).text(str)
-//     }
-
-//     let ad = [".ad", ".adx-responsive-mode"]
-//     for(let i = 0; i < ad.length; i++) $(ad[i]).css("display", "none")
-// }, 2000)
-
+// 和暦
+let archiveDate2Wareki = setInterval(function(){
+    if(document.getElementsByClassName("hatena-module hatena-module-archive").length){
+        let archiveMYT = document.getElementsByClassName("archive-module-year-title")
+        for(let i = 0; i < archiveMYT.length; i++){
+            console.log(archiveMYT[i])
+            let tmp = archiveMYT[i].innerText.match(/(\d{4})\s+\((\d+)\)/i)
+            if(tmp){
+                let y = parseInt(tmp[1])
+                let n = parseInt(tmp[2])
+                let e = (new Era(y, 0, 1)).getEraDate()
+                let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + " (" + n + "件)"
+                archiveMYT[i].innerText = str
+            }
+        }
+        let archiveMMT = document.getElementsByClassName("archive-module-month-title")
+        for(let i = 0; i < archiveMMT.length; i++){
+            let tmp = archiveMMT[i].innerText.match(/(\d{4})\s+\/\s+(\d+)\s+\((\d+)\)/i)
+            let y = parseInt(tmp[1])
+            let m = parseInt(tmp[2])
+            let n = parseInt(tmp[3])
+            let e = (new Era(y, m - 1, 1)).getEraDate()
+            let str = e[0] + (e[1] == 1 ? "元" : e[1]) + "年" + e[2] + "月 (" + n + "件)"
+            archiveMMT[i].innerText = str
+        }
+        clearInterval(archiveDate2Wareki);
+    }
+}, 100);
 
 // ヘッダーメニュー
 if(location.pathname == "/"){
