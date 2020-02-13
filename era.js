@@ -38,30 +38,3 @@ class Era extends Date{
         return `${edate[0]}${edate[1] == 1 ? "元" : edate[1]}年${edate[2]}月${edate[3]}日`
     }
 }
-
-// 時計
-document
-.getElementById("top-editarea")
-.getElementsByTagName("li")[4]
-.getElementsByTagName("a")[0]
-.onclick = function(e){
-    let clock = Window.create("clockWindow")
-    clock.setTitle("Clock")
-    clock.setContents("<h3><time style='color: #fff;'></time></h3>")
-    e["target"].style.display = "none"
-    clock.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
-        clock.close()
-    }
-}
-setInterval(function(){
-    if(document.getElementById("clockWindow")){
-        let now = new Era
-        document
-        .getElementById("clockWindow")
-        .getElementsByClassName("winContents")[0]
-        .getElementsByTagName("time")[0]
-        .innerText 
-        = `${now.getWareki()} ${now.getHours()}時${now.getMinutes()}分${now.getSeconds()}秒` 
-    }
-}, 100)
