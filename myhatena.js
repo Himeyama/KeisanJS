@@ -101,9 +101,9 @@ document
     <h1>ひかりのブログ</h1>\
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
     <p>©2019 ひかり</p>")
-    e["target"].style.display = "none"
+    e.target.parentElement.style.display = "none"
     about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
+        e.target.parentElement.style.display = "block"
         about.close()
     }
 }
@@ -133,10 +133,10 @@ document
         <input type='submit' style='width:64px;' value='検索'>\
     </form>\
     ")
-    e["target"].style.display = "none"
+    e.target.parentElement.style.display = "none"
     search.element.getElementsByTagName("input")[0].value = searchQ
     search.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
+        e.target.parentElement.style.display = "block"
         search.close()
     }
 }
@@ -149,9 +149,9 @@ document
     let clock = Window.create("clockWindow")
     clock.setTitle("Clock")
     clock.setContents("<h3><time style='color: #fff;'></time></h3>")
-    e["target"].style.display = "none"
+    e.target.parentElement.style.display = "none"
     clock.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
+        e.target.parentElement.style.display = "block"
         clock.close()
     }
 }
@@ -174,9 +174,9 @@ document
 .onclick = function(e){
     let note = BrowserNote.create("note")
     note.setTitle("Note")
-    e["target"].style.display = "none"
+    e.target.parentElement.style.display = "none"
     note.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
+        e.target.parentElement.style.display = "block"
         note.close()
     }
 }
