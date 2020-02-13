@@ -104,7 +104,6 @@ document
     <p>©2019 ひかり</p>")
     e["target"].style.display = "none"
     about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        console.log(e["target"])
         e["target"].style.display = "block"
         about.close()
     }
@@ -163,3 +162,18 @@ setInterval(function(){
         = `${now.getWareki()} ${now.getHours()}時${now.getMinutes()}分${now.getSeconds()}秒` 
     }
 }, 100)
+
+// ノート
+document
+.getElementById("top-editarea")
+.getElementsByTagName("li")[5]
+.getElementsByTagName("a")[0]
+.onclick = function(e){
+    let note = BrowserNote.create("note")
+    note.setTitle("Note")
+    e["target"].style.display = "none"
+    note.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+        e["target"].style.display = "block"
+        note.close()
+    }
+}
