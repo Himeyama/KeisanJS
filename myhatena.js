@@ -79,54 +79,56 @@ let postDate = new Era(postDateElement.dateTime)
 let postWareki = postDate.getWareki()
 postDateElement.innerHTML = postWareki
 
-// 次のページ
-var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
-nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
+setTimeout(function(){
+    // 次のページ
+    var nextBtn = document.getElementById("top-editarea").getElementsByTagName("a")[1]
+    nextBtn.href = document.getElementsByClassName("pager-next")[0].children[0].href
 
-// 隠しウィンドウ
-Window.zIndex = 10000
-document
-.getElementById("top-editarea")
-.getElementsByTagName("li")[2]
-.getElementsByTagName("a")[0]
-.onclick = function(e){
-    let about = Window.create("about")
-    about.setTitle("About")
-    about.setContents("\
-    <h1>ひかりのブログ</h1>\
-    <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
-    <p>©2019 ひかり</p>")
-    e["target"].style.display = "none"
-    about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        console.log(e["target"])
-        e["target"].style.display = "block"
-        about.close()
+    // 隠しウィンドウ
+    Window.zIndex = 10000
+    document
+    .getElementById("top-editarea")
+    .getElementsByTagName("li")[2]
+    .getElementsByTagName("a")[0]
+    .onclick = function(e){
+        let about = Window.create("about")
+        about.setTitle("About")
+        about.setContents("\
+        <h1>ひかりのブログ</h1>\
+        <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
+        <p>©2019 ひかり</p>")
+        e["target"].style.display = "none"
+        about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+            console.log(e["target"])
+            e["target"].style.display = "block"
+            about.close()
+        }
     }
-}
 
-// 検索
-let searchQ = ""
-if(location.pathname == "/search"){
-    searchQ = document.getElementsByClassName("search-result-input")[0].value
-}
-document
-.getElementById("top-editarea")
-.getElementsByTagName("li")[3]
-.getElementsByTagName("a")[0]
-.onclick = function(e){
-    let search = Window.create("searchWindow")
-    search.setTitle("Search")
-    search.setContents("\
-    <h1>検索</h1>\
-    <form action='/search' method='get'>\
-        <input name='q' style='width: 168px;font-size: 19px;'>\
-        <input type='submit' style='width:64px;' value='検索'>\
-    </form>\
-    ")
-    e["target"].style.display = "none"
-    search.element.getElementsByTagName("input")[0].value = searchQ
-    search.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
-        e["target"].style.display = "block"
-        search.close()
+    // 検索
+    let searchQ = ""
+    if(location.pathname == "/search"){
+        searchQ = document.getElementsByClassName("search-result-input")[0].value
     }
-}
+    document
+    .getElementById("top-editarea")
+    .getElementsByTagName("li")[3]
+    .getElementsByTagName("a")[0]
+    .onclick = function(e){
+        let search = Window.create("searchWindow")
+        search.setTitle("Search")
+        search.setContents("\
+        <h1>検索</h1>\
+        <form action='/search' method='get'>\
+            <input name='q' style='width: 168px;font-size: 19px;'>\
+            <input type='submit' style='width:64px;' value='検索'>\
+        </form>\
+        ")
+        e["target"].style.display = "none"
+        search.element.getElementsByTagName("input")[0].value = searchQ
+        search.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+            e["target"].style.display = "block"
+            search.close()
+        }
+    }
+}, 1000)
