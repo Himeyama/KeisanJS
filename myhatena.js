@@ -47,6 +47,21 @@ let archiveDate2Wareki = setInterval(function(){
     }
 }, 100);
 
+// アーカイブ和暦
+for(let i = 0; i < document.getElementsByClassName("date archive-date").length; i++){
+    let time = document
+    .getElementsByClassName("date archive-date")[i]
+    .getElementsByTagName("time")[0]
+    .dateTime
+    let wareki = new Era(time)
+    
+    document
+    .getElementsByClassName("date archive-date")[i]
+    .getElementsByTagName("time")[0]
+    .innerText
+    = wareki.getWareki()
+}
+
 
 // ヘッダーメニュー
 if(location.pathname == "/"){
