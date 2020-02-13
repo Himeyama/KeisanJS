@@ -113,6 +113,13 @@ document
 let searchQ = ""
 if(location.pathname == "/search"){
     searchQ = document.getElementsByClassName("search-result-input")[0].value
+    document
+    .getElementById("top-editarea")
+    .getElementsByTagName("li")[3]
+    .getElementsByTagName("a")[0]
+    .style
+    .borderBottom
+    = "solid 4px dodgerblue"
 }
 document
 .getElementById("top-editarea")
