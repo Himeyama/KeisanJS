@@ -103,3 +103,30 @@ document
         about.close()
     }
 }
+
+// 検索
+let searchQ = ""
+if(location.pathname == "/search"){
+    searchQ = document.getElementsByClassName("search-result-input")[0].value
+}
+document
+.getElementById("top-editarea")
+.getElementsByTagName("li")[3]
+.getElementsByTagName("a")[0]
+.onclick = function(e){
+    let search = Window.create("searchWindow")
+    search.setTitle("Search")
+    search.setContents("\
+    <h1>検索</h1>\
+    <form action='/search' method='get'>\
+        <input name='q' style='width: 168px;font-size: 19px;'>\
+        <input type='submit' style='width:64px;' value='検索'>\
+    </form>\
+    ")
+    e["target"].style.display = "none"
+    search.element.getElementsByTagName("input")[0].value = searchQ
+    search.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+        e["target"].style.display = "block"
+        search.close()
+    }
+}
