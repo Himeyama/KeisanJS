@@ -131,7 +131,7 @@ document
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
     <p>©平成29年-令和2年 ひかり</p>")
     e.target.parentElement.style.display = "none"
-    about.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+    about.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         about.close()
     }
@@ -164,7 +164,7 @@ document
     ")
     e.target.parentElement.style.display = "none"
     search.element.getElementsByTagName("input")[0].value = searchQ
-    search.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+    search.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         search.close()
     }
@@ -179,7 +179,7 @@ document
     clock.setTitle("Clock")
     clock.setContents("<h3><time style='color: #fff;'></time></h3>")
     e.target.parentElement.style.display = "none"
-    clock.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+    clock.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         clock.close()
     }
@@ -204,7 +204,7 @@ document
     let note = BrowserNote.create("note")
     note.setTitle("Note")
     e.target.parentElement.style.display = "none"
-    note.element.getElementsByClassName("winCloseBtn")[0].onclick = function(f){
+    note.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         note.close()
     }
