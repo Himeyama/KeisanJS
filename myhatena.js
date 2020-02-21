@@ -209,3 +209,7 @@ document
         note.close()
     }
 }
+
+if(location.pathname == "/"){
+    document.getElementById("main-inner").getElementsByTagName("article")[1].style.display = "none"
+}
