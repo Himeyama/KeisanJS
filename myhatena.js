@@ -127,7 +127,7 @@ document
     let about = Window.create("about")
     about.setTitle("About")
     about.setContents("\
-    <h1>ひかりのブログ</h1>\
+    <h1>ルミナス++</h1>\
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
     <p>©平成29年-令和2年 ひかり</p>")
     e.target.parentElement.style.display = "none"
