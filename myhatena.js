@@ -213,3 +213,31 @@ document
 if(location.pathname == "/"){
     document.getElementById("main-inner").getElementsByTagName("article")[1].style.display = "none"
 }
+
+// コナミコマンド
+KonamiCommand.command = function(){
+    let s = document.createElement("style")
+    document.body.append(s)
+    let style =
+        ".entry-title a {\
+            color: #fafafa;\
+        }\
+        body{\
+            background: #333;\
+            color: #fafafa;\
+        }\
+        .comment-box a{\
+            color: #fafafa;\
+        }\
+        .pager-next a, .pager-prev a {\
+            color: #fafafa;\
+        }\
+        .hatena-module-title a{\
+            color: #fafafa;\
+        }\
+        a{\
+            color: #43A047;\
+        }\
+        "
+    s.innerHTML = style
+}
