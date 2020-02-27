@@ -11,3 +11,4 @@ title: プロジェクトページ
 - [誕生日計算](./calcbirthday.html)
 - [konamiCommand.js](./konamiCommand.js)
 - [myhatena.js](./myhatena.js)
+- [ブラウザ版ターミナル](/browserTerminal/)
