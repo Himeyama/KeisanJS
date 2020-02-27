@@ -210,10 +210,6 @@ document
     }
 }
 
-if(location.pathname == "/"){
-    document.getElementById("main-inner").getElementsByTagName("article")[1].style.display = "none"
-}
-
 // コナミコマンド
 KonamiCommand.command = function(){
     let s = document.createElement("style")
