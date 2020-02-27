@@ -57,4 +57,3 @@ console.log(e.getEraDate())
 <code>
 <script>e = new Era(2019, 4, 1);document.write(e.getEraDate())</script>
 </code>
-
