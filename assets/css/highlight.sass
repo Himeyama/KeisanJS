@@ -2,6 +2,8 @@
 ---
 
 .highlight
+    border-radius: 8px
+
     table
         td
             padding: 5px
@@ -21,18 +23,15 @@
         background-color: #e3d2d2
 
     .gd
-        color: #000000
         background-color: #ffdddd
 
     .ge
-        color: #000000
         font-style: italic
 
     .gr
         color: #aa0000
 
     .gi
-        color: #000000
         background-color: #ddffdd
 
     .go
@@ -51,11 +50,9 @@
         color: #aa0000
 
     .kc
-        color: #000000
         font-weight: bold
 
     .kd, .kn, .kp, .kr, .kt, .k, .kv
-        color: #000000
         font-weight: bold
 
     .mf, .mh, .il, .mi, .mo, .m, .mb, .mx
@@ -124,18 +121,41 @@
         color: #008080
 
     .ow
-        color: #000000
         font-weight: bold
     
     .o
-        color: #000000
         font-weight: bold
 
     .w
         color: #bbbbbb
 
-    background-color: #f8f8f8
+    background-color: #333
+
 
 pre.highlight
     padding: 16px
     overflow-x: auto
+
+div.highlight
+    font-family: 'Ubuntu Mono',monospace
+    color: #efefef
+    pre.highlight
+    
+        padding: 16px
+        overflow-x: auto
+
+    pre
+        code
+            code
+                counter-increment: linenumber
+        
+            & > code::before
+                content: counter(linenumber)
+                width: 32px
+                display: inline-block
+                text-align: right
+                margin-right: 8px
+                font-weight: normal
+                color: #ccc
+                padding-right: 12px
+
