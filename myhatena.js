@@ -167,7 +167,7 @@ document
     search.frame = search_element
     e.target.parentElement.style.display = "none"
     search.element.getElementsByTagName("input")[0].value = searchQ
-    search.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
+    search.element.getElementsByClassName("btn_r")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         search.close()
     }
