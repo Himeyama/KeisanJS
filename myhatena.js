@@ -99,7 +99,7 @@ for(let i = 0; i < codes.length; i++){
     for(let j = 0; j < r.length; j++){
         r[j] = `<code>${r[j].replace(/\r?\n/g, "")}</code>\n`
     }
-    n.innerHTML = r.join("")
+    n.innerHTML = "<div class='icon'><div class='copy' onclick='copy_code(this)'></div></div>" + r.join("")
 }
 
 // 和暦
