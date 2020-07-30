@@ -179,7 +179,7 @@ document
 .getElementsByTagName("li")[4]
 .onclick = function(e){
     let clock = Window.create("clockWindow")
-    clock.title = "Clock"
+    clock.title = "時計"
     let element = document.createElement("div")
     element.innerHTML = "<h3><time style='color: #fff;'></time></h3>"
     clock.frame = element
@@ -204,7 +204,7 @@ document
 .getElementsByTagName("li")[5]
 .onclick = function(e){
     let note = BrowserNote.create("note")
-    note.setTitle("Note")
+    note.title = "ノート"
     e.target.parentElement.style.display = "none"
     note.element.getElementsByClassName("btn_r")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
