@@ -132,7 +132,7 @@ document
     <p>©平成29年-令和2年 ひかり</p>"
     about.frame = element
     e.target.parentElement.style.display = "none"
-    about.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
+    about.element.getElementsByClassName("btn_r")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         about.close()
     }
@@ -184,7 +184,7 @@ document
     element.innerHTML = "<h3><time style='color: #fff;'></time></h3>"
     clock.frame = element
     e.target.parentElement.style.display = "none"
-    clock.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
+    clock.element.getElementsByClassName("btn_r")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         clock.close()
     }
@@ -206,7 +206,7 @@ document
     let note = BrowserNote.create("note")
     note.setTitle("Note")
     e.target.parentElement.style.display = "none"
-    note.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
+    note.element.getElementsByClassName("btn_r")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
         note.close()
     }
