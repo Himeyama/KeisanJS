@@ -125,11 +125,12 @@ document
 .getElementsByTagName("li")[2]
 .onclick = function(e){
     let about = Window.create("about")
-    about.setTitle("About")
-    about.setContents("\
-    <h1>綿日記</h1>\
+    about.title = "About"
+    let element = document.createElement("div")
+    element.innerHTML = "<h1>綿縺　わたもつれ</h1>\
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
-    <p>©平成29年-令和2年 ひかり</p>")
+    <p>©平成29年-令和2年 ひかり</p>"
+    about.frame = element
     e.target.parentElement.style.display = "none"
     about.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
