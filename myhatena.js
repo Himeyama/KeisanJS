@@ -192,10 +192,7 @@ document
 setInterval(function(){
     if(document.getElementById("clockWindow")){
         let now = new Era
-        document
-        .getElementById("clockWindow")
-        .getElementsByClassName("winContents")[0]
-        .getElementsByTagName("time")[0]
+        document.getElementById("clockWindow").getElementsByTagName("time")[0]
         .innerText 
         = `${now.getWareki()} ${now.getHours()}時${now.getMinutes()}分${now.getSeconds()}秒` 
     }
