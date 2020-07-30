@@ -156,7 +156,7 @@ document
 .onclick = function(e){
     let search = Window.create("searchWindow")
     search.title = "検索"
-    search_element = document.createElement("div")
+    let search_element = document.createElement("div")
     search_element.innerHTML = "\
     <h3>検索</h3>\
     <form action='/search' method='get'>\
@@ -179,8 +179,10 @@ document
 .getElementsByTagName("li")[4]
 .onclick = function(e){
     let clock = Window.create("clockWindow")
-    clock.setTitle("Clock")
-    clock.setContents("<h3><time style='color: #fff;'></time></h3>")
+    clock.title = "Clock"
+    let element = document.createElement("div")
+    element.innerHTML = "<h3><time style='color: #fff;'></time></h3>"
+    clock.frame = element
     e.target.parentElement.style.display = "none"
     clock.element.getElementsByClassName("winCloseBtn")[0].onmousedown = function(f){
         e.target.parentElement.style.display = "inline-block"
