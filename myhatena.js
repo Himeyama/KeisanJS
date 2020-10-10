@@ -77,7 +77,7 @@ if(document.getElementsByClassName("archive-heading").length){
 
 
 // ヘッダーメニュー
-if(location.pathname == "/"){
+/*if(location.pathname == "/"){
     document.getElementById("top-editarea")
     .children[0]
     .children[0]
@@ -89,7 +89,7 @@ if(location.pathname == "/"){
 let os = getOS()
 if(os == "Android" || os == "iPhone"){
     document.getElementById("top-editarea").remove()
-}
+}*/
 
 // コード番号
 let codes = document.getElementsByTagName("pre")
@@ -127,7 +127,7 @@ document
     let about = Window.create("about")
     about.title = "About"
     let element = document.createElement("div")
-    element.innerHTML = "<h1>綿縺　わたもつれ</h1>\
+    element.innerHTML = "<h1>Blog of 2104</h1>\
     <a href='//nihonium.hatenablog.com'>nihonium.hatenablog.com</a>\
     <p>©平成29年-令和2年 ひかり</p>"
     about.frame = element
